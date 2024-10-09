@@ -69,6 +69,54 @@ This project is a **Secure Chat System** built in C++ that provides robust user 
 - **AES-128 bit CBC mode for encryption**
 - **Diffie-Hellman for secure key exchange**
 
+### 🛠️ Wireshark Analysis
+To analyze traffic and validate the encryption process of your chat application, follow these steps:
+
+1. **Open Wireshark**:
+   - Launch the Wireshark application on your computer.
+
+2. **Select Loopback Interface**:
+   - In the main Wireshark window, look for the network interfaces list.
+   - Select the **Loopback Interface** (often labeled as `lo` or `Loopback`).
+
+3. **Set Capture Filter** (Optional):
+   - Although this is optional, setting a capture filter can help you focus on the relevant traffic.
+   - In the capture options, you can specify a filter, but it’s usually not necessary for loopback. You can proceed without it.
+
+4. **Start Capturing Packets**:
+   - Click on the **Start capturing packets** button (the shark fin icon) to begin capturing traffic on the loopback interface.
+
+5. **Set Display Filter**:
+   - Once the capture starts, in the display filter bar (located at the top), enter the following filter:
+     ```
+     ip.addr == 127.0.0.1
+     ```
+   - This filter will show only the packets that are transmitted to and from the localhost.
+
+6. **Perform Chat Actions**:
+   - While Wireshark is capturing packets, initiate a chat between the client and server. Send some messages to generate traffic.
+   - Ensure that both the client and server applications are running simultaneously.
+
+7. **Stop the Capture**:
+   - After you've sent a few messages, return to Wireshark and click on the **Stop capturing packets** button (the red square icon).
+
+8. **Analyze Captured Packets**:
+   - Review the captured packets in the main window.
+   - Click on individual packets to view their details in the packet details pane below.
+   - Check the protocols used (e.g., TLS/SSL) to verify that encryption is being utilized for your chat messages.
+   - You can expand the details for specific protocols (like TLS) to view more information about the encryption and any transmitted data.
+
+9. **Inspect Decrypted Data** (if applicable):
+   - If your application is configured to log or display decrypted messages, compare the captured packets with what you see in the client and server console/logs to validate that the encryption and decryption processes are functioning correctly.
+
+10. **Export or Save Captured Data** (Optional):
+    - If you need to share or review the captured packets later, go to **File** > **Save As** and choose a location to save the capture file.
+
+### 🔍 Additional Tips
+- **Highlight Encryption**: Look for packets marked as encrypted (e.g., showing `TLS` or `SSL`), which indicates that your chat messages are protected during transmission.
+- **Use Expert Information**: Wireshark has an "Expert Information" feature (found in the Analyze menu) that can help identify potential issues or noteworthy events in the captured data.
+
+
 ## 📜 Future Enhancements
 - Implementing time-based key expiration for additional security.
 - Encrypt `creds.txt` for even more secure storage like using a tool called crypter.
