@@ -73,3 +73,20 @@ This project is a **Secure Chat System** built in C++ that provides robust user 
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/SecureChatSystem.git
+
+2. Command for execution:
+   ```bash
+   g++ server.cpp -I/usr/local/ssl/include -L/usr/local/ssl/lib -lssl -lcrypto
+   g++ client.cpp -I/usr/local/ssl/include -L/usr/local/ssl/lib -lssl -lcrypto
+
+3. Additional Notes:
+   Please compile the server first so it will be up for listening otherwise the client alone would not be able to make a connection solely.
+
+## ⚠️ Errors and Omissions
+
+If you encounter any errors, bugs, or have suggestions for improvements, feel free to reach out to me.
+
+You can contact me via email at: [ahad06074@gmail.com](mailto:ahad06074@gmail.com)
+
+Errors and omissions are accepted!
+
