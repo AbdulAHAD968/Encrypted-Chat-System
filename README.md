@@ -53,9 +53,15 @@ This project is a **Secure Chat System** built in C++ that provides robust user 
 
 ## 📦 File Structure
 
-- `creds.txt`: Stores user credentials in the format: `email, username, hashed password, salt`.
+- `updated_creds.txt`: Stores user credentials in the format: `email, username, hashed password, salt`.
+- `creds.txt`: Stores user credentials in the format: `email, username, text password`.
 - `Client.cpp`: Contains the logic for user interaction, registration, login, and encrypted message exchange.
 - `Server.cpp`: Manages user credentials, verifies login details, and facilitates encrypted communication.
+- `HEADER.h`: COntains all the libraries that were required for smooth workflow.
+- `ADMIN.h`: Contains all the admin functions like: `Remove user, Edit User, See User data, etc`.
+- `USER.h`: Contains all the user functions like: `Register, Login, and Chatting`.
+- `key_exchange.cpp`: Throgh classes visualize how the things work in Deffie Helmin Key Exchange Mechanism.
+- `deffie_helmin.cpp`: This was additional code. Here you can enter the final shared key and brute force the P, alpha, a, b, and both the public keys for that shared key.
 
 ## 🔧 Technologies Used
 - **C++**
@@ -64,9 +70,9 @@ This project is a **Secure Chat System** built in C++ that provides robust user 
 - **Diffie-Hellman for secure key exchange**
 
 ## 📜 Future Enhancements
-- Implement time-based key expiration for added security.
-- Encrypt `creds.txt` for even more secure storage.
-- Add more detailed logging and error-handling mechanisms.
+- Implementing time-based key expiration for additional security.
+- Encrypt `creds.txt` for even more secure storage like using a tool called crypter.
+- Adding more detailed logging and error-handling mechanisms.
 
 ## 🛠️ Setup and Usage
 
